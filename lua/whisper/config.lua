@@ -15,7 +15,7 @@ ConfigModule.config = {
     end
   end,
   -- TODO: add all messages
-  components = { 'NeviraIDE', 'LSP', 'messages' },
+  components = { 'NeViRAIDE', 'LSP', 'messages' },
   notify = {
     clear_time = 5000,
     min_level = vim.log.levels.INFO,

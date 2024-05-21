@@ -1,5 +1,5 @@
 local api = vim.api
-local cfg = require('neviraide-ui.notifications.config')
+local cfg = require('whisper.config')
 local displayw = vim.fn.strdisplaywidth
 
 local StatusModule = {}

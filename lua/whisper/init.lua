@@ -1,7 +1,7 @@
 local async = require('plenary.async')
 
-local status = require('neviraide-ui.notifications.status')
-local config = require('neviraide-ui.notifications.config')
+local status = require('whisper.status')
+local config = require('whisper.config')
 
 local api = vim.api
 
@@ -13,7 +13,7 @@ local notify = async.void(function(msg, level, opts, no_cache)
   opts = opts or {}
   if level >= config.config.notify.min_level then
     status.push(
-      'NeviraIDE',
+      'NeViRAIDE',
       { mandat = msg, title = opts.title, icon = opts.icon }
     )
 
@@ -24,7 +24,7 @@ local notify = async.void(function(msg, level, opts, no_cache)
     local lifetime = config.config.notify.clear_time
     if lifetime > 0 then
       async.util.sleep(lifetime)
-      status.pop('NeviraIDE')
+      status.pop('NeViRAIDE')
     end
   end
 end)
@@ -32,7 +32,7 @@ end)
 local commands = {
   Clear = {
     opts = {},
-    func = function() status.clear('NeviraIDE') end,
+    func = function() status.clear('NeViRAIDE') end,
   },
   Recent = {
     opts = {
